@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>전성훈 포트폴리오</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -20,17 +20,13 @@
       --text-secondary: #555555;
       --text-muted: #999999;
       --accent: #111111;
-      --accent-soft: rgba(17,17,17,0.06);
-      --accent-line: rgba(17,17,17,0.12);
       --tag-bg: #efefed;
       --mono: 'JetBrains Mono', monospace;
       --radius-sm: 8px;
       --radius-md: 14px;
-      --radius-lg: 20px;
       --shadow-sm: 0 2px 8px rgba(0,0,0,0.05);
       --shadow-md: 0 4px 24px rgba(0,0,0,0.08);
       --shadow-lg: 0 12px 48px rgba(0,0,0,0.13);
-      --shadow-xl: 0 24px 64px rgba(0,0,0,0.18);
     }
 
     html { scroll-behavior: smooth; }
@@ -108,7 +104,7 @@
       font-weight: 500;
       color: var(--text-muted);
       letter-spacing: 0.06em;
-      margin-bottom: 52px;
+      margin-bottom: 34px;
       display: flex;
       align-items: center;
       gap: 10px;
@@ -121,67 +117,13 @@
       background: var(--border);
     }
 
-    /* ── HERO SECTION ─────────────────────── */
-    #hero {
-      padding: 160px 0 130px;
-    }
-    .hero-greeting {
-      font-family: var(--mono);
-      font-size: 13px;
-      color: var(--text-muted);
-      letter-spacing: 0.03em;
-      margin-bottom: 20px;
-    }
-    .hero-title {
-      font-size: clamp(36px, 6vw, 58px);
-      font-weight: 700;
-      color: var(--text-primary);
-      line-height: 1.15;
-      letter-spacing: -0.03em;
-      margin-bottom: 24px;
-    }
-    .hero-title span {
-      color: var(--text-muted);
-      display: block;
-      font-weight: 700;
-    }
-    .hero-desc {
-      font-size: 15px;
-      line-height: 1.85;
-      color: var(--text-secondary);
-      max-width: 520px;
-      margin-bottom: 40px;
-      font-weight: 400;
-    }
-    .hero-links {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-    .hero-link-btn {
-      width: 40px; height: 40px;
-      border-radius: 50%;
-      border: 1px solid var(--border);
-      background: var(--surface);
-      display: flex; align-items: center; justify-content: center;
-      text-decoration: none;
-      color: var(--text-secondary);
-      transition: all 0.2s;
-      box-shadow: var(--shadow-sm);
-    }
-    .hero-link-btn:hover {
-      background: var(--accent);
-      color: #fff;
-      border-color: var(--accent);
-      transform: translateY(-2px);
-      box-shadow: var(--shadow-md);
-    }
-    .hero-link-btn svg { width: 16px; height: 16px; }
-
     /* ── SECTIONS COMMON ──────────────────── */
     section {
-      padding: 110px 0;
+      padding: 60px 0;
       border-top: 1px solid var(--border-light);
+    }
+    #about {
+      padding-top: 96px;
     }
 
     /* ── ABOUT ME ─────────────────────────── */
@@ -269,7 +211,7 @@
     }
     .exp-item {
       position: relative;
-      padding: 0 0 40px 28px;
+      padding: 0 0 28px 28px;
       border-left: 1px solid var(--border);
     }
     .exp-item:last-child {
@@ -307,28 +249,6 @@
       margin-bottom: 10px;
       font-weight: 400;
     }
-    .exp-bullets {
-      list-style: none;
-      display: flex;
-      flex-direction: column;
-      gap: 5px;
-    }
-    .exp-bullets li {
-      font-size: 13px;
-      color: var(--text-secondary);
-      padding-left: 14px;
-      position: relative;
-      line-height: 1.65;
-    }
-    .exp-bullets li::before {
-      content: '▸';
-      position: absolute;
-      left: 0;
-      color: var(--text-muted);
-      font-size: 10px;
-      top: 3px;
-    }
-
     /* ── SKILLS ───────────────────────────── */
     .skills-layout {
       display: grid;
@@ -405,7 +325,6 @@
       overflow: hidden;
     }
     .skill-icon img { width: 22px; height: 22px; object-fit: contain; }
-    .skill-info {}
     .skill-name-text {
       font-size: 13px;
       font-weight: 600;
@@ -422,7 +341,7 @@
     .main-projects-list {
       display: flex;
       flex-direction: column;
-      gap: 100px;
+      gap: 60px;
     }
     .proj-item {
       position: relative;
@@ -529,13 +448,13 @@
     }
     .proj-link-btn svg { width: 13px; height: 13px; }
 
-    /* ── SUB PROJECTS ─────────────────────── */
-    .sub-projects-grid {
+    /* ── ACTIVITIES ───────────────────────── */
+    .activities-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 16px;
     }
-    .sub-card {
+    .activity-card {
       background: var(--surface);
       border: 1px solid var(--border-light);
       border-radius: var(--radius-md);
@@ -545,46 +464,46 @@
       flex-direction: column;
       gap: 12px;
     }
-    .sub-card:hover {
+    .activity-card:hover {
       border-color: var(--border);
       box-shadow: var(--shadow-md);
       transform: translateY(-4px);
     }
-    .sub-card-header {
+    .activity-card-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
     }
-    .sub-folder-icon {
+    .activity-type {
+      font-family: var(--mono);
+      font-size: 10.5px;
+      font-weight: 600;
+      color: var(--text-secondary);
+      background: var(--tag-bg);
+      border-radius: 4px;
+      padding: 4px 8px;
+    }
+    .activity-period {
+      font-family: var(--mono);
+      font-size: 10.5px;
       color: var(--text-muted);
     }
-    .sub-folder-icon svg { width: 28px; height: 28px; }
-    .sub-card-links {
-      display: flex; gap: 8px;
-    }
-    .sub-card-link {
-      color: var(--text-muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-    .sub-card-link:hover { color: var(--text-primary); }
-    .sub-card-link svg { width: 16px; height: 16px; display: block; }
-    .sub-card-title {
+    .activity-card-title {
       font-size: 15px;
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.02em;
     }
-    .sub-card-desc {
+    .activity-card-desc {
       font-size: 12.5px;
       line-height: 1.7;
       color: var(--text-secondary);
       flex: 1;
     }
-    .sub-card-tags {
+    .activity-card-tags {
       display: flex; flex-wrap: wrap; gap: 5px;
     }
-    .sub-card-tag {
+    .activity-card-tag {
       font-family: var(--mono);
       font-size: 10px;
       color: var(--text-muted);
@@ -595,7 +514,7 @@
 
     /* ── CONTACT ──────────────────────────── */
     #contact {
-      padding: 120px 0;
+      padding: 72px 0;
       text-align: center;
     }
     .contact-label {
@@ -648,6 +567,12 @@
       align-items: center;
       justify-content: space-between;
     }
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: 100%;
+    }
     .footer-name {
       font-family: var(--mono);
       font-size: 12px;
@@ -673,7 +598,6 @@
     .reveal-d3 { transition-delay: 0.19s; }
     .reveal-d4 { transition-delay: 0.26s; }
     .reveal-d5 { transition-delay: 0.33s; }
-    .reveal-d6 { transition-delay: 0.40s; }
 
     /* ── RESPONSIVE ───────────────────────── */
     @media (max-width: 900px) {
@@ -699,7 +623,7 @@
         margin: 0;
       }
 
-      .sub-projects-grid { grid-template-columns: repeat(2, 1fr); }
+      .activities-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
@@ -707,11 +631,11 @@
       nav { gap: 20px; }
       nav a { font-size: 11.5px; }
       .page-wrap { padding: 0 20px; }
-      #hero { padding: 120px 0 80px; }
-      section { padding: 80px 0; }
+      section { padding: 52px 0; }
+      #about { padding-top: 84px; }
       .skills-grid { grid-template-columns: 1fr; }
-      .sub-projects-grid { grid-template-columns: 1fr; }
-      .main-projects-list { gap: 60px; }
+      .activities-grid { grid-template-columns: 1fr; }
+      .main-projects-list { gap: 40px; }
     }
 
     @media (max-width: 420px) {
@@ -723,7 +647,7 @@
 
 <!-- ── HEADER ──────────────────────────────────────────── -->
 <header>
-  <a class="logo" href="#hero">J</a>
+  <a class="logo" href="#about">J</a>
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -734,39 +658,16 @@
 </header>
 
 <main>
-<!-- ── HERO ────────────────────────────────────────────── -->
-<section id="hero" style="border-top:none;padding-top:160px;padding-bottom:130px;">
-  <div class="page-wrap">
-    <p class="hero-greeting reveal reveal-d1">안녕하세요, 저는 백엔드 개발자</p>
-    <h1 class="hero-title reveal reveal-d2">
-      전성훈입니다.
-      <span>기능 너머의 완성도를</span>
-      <span>고민하는 개발자.</span>
-    </h1>
-    <div class="hero-links reveal reveal-d4">
-      <a href="https://github.com/1jshun" target="_blank" rel="noopener" class="hero-link-btn" aria-label="GitHub">
-        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-      </a>
-      <a href="mailto:myjsh6543@gmail.com" class="hero-link-btn" aria-label="Email">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </a>
-      <a href="tel:01065475160" class="hero-link-btn" aria-label="Phone">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.14 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-      </a>
-    </div>
-  </div>
-</section>
-
 <!-- ── ABOUT ME ─────────────────────────────────────────── -->
 <section id="about">
   <div class="page-wrap">
     <p class="sec-label reveal">01. About Me</p>
     <div class="about-layout">
       <div class="about-text reveal reveal-d1">
-        <h2>기능 너머의 서비스 완성도를<br/>고민하는 개발자입니다.</h2>
+        <h2>보이는 기능 뒤의 흐름을<br>고민하는 개발자입니다.</h2>
         <p>
-          백엔드 개발은 단순히 API를 구현하는 것이 아니라, 안정적인 요청 처리와 명확한 데이터 흐름을 바탕으로 서비스의 기반을 설계하는 일이라고 생각합니다.<br/><br/>
-          Spring Boot와 JPA를 기반으로 REST API를 설계하고, 데이터베이스 구조와 비즈니스 로직을 구현하며 실제 서비스에 가까운 개발 경험을 쌓아왔습니다. Docker, Kubernetes, Elasticsearch 등 다양한 기술을 프로젝트에 적용하며 성능 개선, 배포 환경, 확장 가능한 구조까지 함께 고민하는 개발자로 성장하고 있습니다.
+          백엔드 개발은 화면에 보이는 기능이 빠르고 안정적으로 동작하도록, 보이지 않는 구조를 설계하는 일이라고 생각합니다.<br><br>
+          Spring Boot와 JPA를 기반으로 REST API와 비즈니스 로직을 구현하며, 요청이 처리되고 데이터가 전달되는 과정을 꾸준히 다뤄왔습니다. 단순히 기능을 동작시키는 데서 끝나지 않고, 더 빠르고 안정적인 흐름으로 개선하는 백엔드 개발자가 되고자 합니다.
         </p>
         <div class="about-contact">
           <a href="mailto:myjsh6543@gmail.com" class="about-contact-item">
@@ -775,7 +676,7 @@
           </a>
           <a href="tel:01065475160" class="about-contact-item">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.14 2.18 2 2 0 012.11 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 14.92z"/></svg>
-            010-6547-5160
+            010&#8209;6547&#8209;5160
           </a>
           <a href="https://github.com/1jshun" target="_blank" rel="noopener" class="about-contact-item">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
@@ -785,8 +686,8 @@
       </div>
       <div class="about-img-wrap reveal reveal-d2">
         <div class="about-img-box">
-  <img src="./p12.jpg" alt="전성훈 프로필" />
-</div>
+          <img src="./p12.jpg" alt="전성훈 프로필">
+        </div>
         <div class="about-img-deco">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
         </div>
@@ -804,24 +705,23 @@
       <div class="exp-item reveal reveal-d1">
         <span class="exp-dot"></span>
         <div class="exp-period">2025.12.09 — 2026.06.08</div>
-        <div class="exp-org">한화시스템 BEYOND BOOTCAMP</div>
-        <div class="exp-role">Frontend Developer</div>
-        <ul class="exp-bullets">
-  
-        </ul>
+        <div class="exp-org">한화시스템 BEYOND SW CAMP</div>
+        <div class="exp-role">백엔드 개발자 양성과정<br>
+        Spring Boot와 JPA를 활용해 요청 처리, 데이터 흐름, 인증 구조를 직접 구현하며 백엔드 서비스의 구조를 익혔습니다.</div>
       </div>
 
       <div class="exp-item reveal reveal-d2">
         <span class="exp-dot"></span>
         <div class="exp-period">2024.02 — 2026.02</div>
-        <div class="exp-org">성결 대학교</div>
-        <div class="exp-role">컴퓨터공학과 · 학사</div>
+        <div class="exp-org">성결대학교</div>
+        <div class="exp-role">컴퓨터공학과 학사<br>
+        자료구조, 알고리즘, 데이터베이스, 운영체제 등 전공 과목을 이수하며 개발의 기본기를 쌓았습니다.</div>
       </div>
 
       <div class="exp-item reveal reveal-d3">
         <span class="exp-dot"></span>
         <div class="exp-period">2017.03 — 2020.01</div>
-        <div class="exp-org">광명 고등학교</div>
+        <div class="exp-org">광명고등학교</div>
         <div class="exp-role">이과 졸업</div>
       </div>
 
@@ -835,10 +735,10 @@
     <p class="sec-label reveal">03. Skills</p>
     <div class="skills-layout reveal">
       <div class="skills-cats">
-        <button class="skill-cat-btn active" data-cat="backend">Backend</button>
-        <button class="skill-cat-btn" data-cat="frontend">Frontend</button>
-        <button class="skill-cat-btn" data-cat="infra">Infra / DB</button>
-        <button class="skill-cat-btn" data-cat="tool">Tools</button>
+        <button type="button" class="skill-cat-btn active" data-cat="backend">Backend</button>
+        <button type="button" class="skill-cat-btn" data-cat="frontend">Frontend</button>
+        <button type="button" class="skill-cat-btn" data-cat="infra">Infra / DB</button>
+        <button type="button" class="skill-cat-btn" data-cat="tool">Tools</button>
       </div>
       <div class="skills-panel">
 
@@ -847,7 +747,7 @@
           <div class="skills-grid">
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Java</div>
@@ -856,7 +756,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Boot">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Spring Boot</div>
@@ -865,7 +765,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Data JPA" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/spring/spring-original.svg" alt="Spring Data JPA">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Spring Data JPA</div>
@@ -874,7 +774,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.simpleicons.org/springsecurity/6DB33F" alt="Spring Security" />
+                <img src="https://cdn.simpleicons.org/springsecurity/6DB33F" alt="Spring Security">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Spring Security</div>
@@ -889,7 +789,7 @@
           <div class="skills-grid">
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">HTML</div>
@@ -898,7 +798,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue.js">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Vue.js</div>
@@ -907,7 +807,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">CSS</div>
@@ -916,7 +816,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">JavaScript</div>
@@ -931,7 +831,7 @@
           <div class="skills-grid">
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">MySQL</div>
@@ -940,7 +840,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" alt="MariaDB" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mariadb/mariadb-original.svg" alt="MariaDB">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">MariaDB</div>
@@ -949,7 +849,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Docker</div>
@@ -958,7 +858,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-original.svg" alt="Kubernetes">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Kubernetes</div>
@@ -967,7 +867,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/elasticsearch/elasticsearch-original.svg" alt="Elasticsearch">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Elasticsearch</div>
@@ -976,7 +876,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachekafka/apachekafka-original.svg" alt="Kafka">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Kafka</div>
@@ -991,7 +891,7 @@
           <div class="skills-grid">
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">GitHub</div>
@@ -1000,7 +900,7 @@
             </div>
             <div class="skill-entry">
               <div class="skill-icon">
-                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion" />
+                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/notion/notion-original.svg" alt="Notion">
               </div>
               <div class="skill-info">
                 <div class="skill-name-text">Notion</div>
@@ -1025,7 +925,7 @@
       <div class="proj-item reveal">
         <div class="proj-layout">
           <div class="proj-img-wrap">
-            <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&h=438&fit=crop" alt="DnDn" />
+            <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&h=438&fit=crop" alt="DnDn">
             <div class="proj-img-overlay"></div>
           </div>
           <div class="proj-info-box">
@@ -1057,7 +957,7 @@
       <div class="proj-item reveal">
         <div class="proj-layout reverse">
           <div class="proj-img-wrap">
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=438&fit=crop" alt="POTICARD" />
+            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=438&fit=crop" alt="POTICARD">
             <div class="proj-img-overlay"></div>
           </div>
           <div class="proj-info-box">
@@ -1088,7 +988,7 @@
       <div class="proj-item reveal">
         <div class="proj-layout">
           <div class="proj-img-wrap">
-            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&h=438&fit=crop" alt="Routie" />
+            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&h=438&fit=crop" alt="Routie">
             <div class="proj-img-overlay"></div>
           </div>
           <div class="proj-info-box">
@@ -1119,108 +1019,51 @@
   </div>
 </section>
 
-<!-- ── SUB PROJECTS ─────────────────────────────────────── -->
-<section id="sub-projects">
+<!-- ── ACTIVITIES ───────────────────────────────────────── -->
+<section id="activities">
   <div class="page-wrap">
-    <p class="sec-label reveal">05. Sub Projects</p>
-    <div class="sub-projects-grid">
+    <p class="sec-label reveal">05. Activities</p>
+    <div class="activities-grid">
 
-      <div class="sub-card reveal reveal-d1">
-        <div class="sub-card-header">
-          <div class="sub-folder-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-          </div>
-          <div class="sub-card-links">
-            <a href="https://github.com/1jshun" class="sub-card-link" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
+      <div class="activity-card reveal reveal-d1">
+        <div class="activity-card-header">
+          <span class="activity-type">External</span>
+          <span class="activity-period">2025.12 — 2026.06</span>
         </div>
-        <div class="sub-card-title">홈닙 스토어</div>
-        <div class="sub-card-desc">인테리어 소품 쇼핑몰 풀스택 미니 프로젝트. 장바구니, 결제 UX 설계 및 REST API 구현.</div>
-        <div class="sub-card-tags">
-          <span class="sub-card-tag">Spring Boot</span>
-          <span class="sub-card-tag">React</span>
-          <span class="sub-card-tag">MySQL</span>
+        <div class="activity-card-title">한화시스템 BEYOND SW CAMP</div>
+        <div class="activity-card-desc">실무형 교육 과정에서 웹 서비스 개발 흐름과 팀 프로젝트를 경험했습니다. 요구사항 분석부터 구현, 협업, 배포까지 서비스 완성도를 기준으로 학습했습니다.</div>
+        <div class="activity-card-tags">
+          <span class="activity-card-tag">Bootcamp</span>
+          <span class="activity-card-tag">Team Project</span>
+          <span class="activity-card-tag">Backend</span>
         </div>
       </div>
 
-      <div class="sub-card reveal reveal-d2">
-        <div class="sub-card-header">
-          <div class="sub-folder-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-          </div>
-          <div class="sub-card-links">
-            <a href="https://github.com/1jshun" class="sub-card-link" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
+      <div class="activity-card reveal reveal-d2">
+        <div class="activity-card-header">
+          <span class="activity-type">Campus</span>
+          <span class="activity-period">2024.02 — 2026.02</span>
         </div>
-        <div class="sub-card-title">부동산 레퍼런스</div>
-        <div class="sub-card-desc">공공 API 기반 부동산 실거래가 조회 서비스. 지도 연동, 필터 검색 UI 구현.</div>
-        <div class="sub-card-tags">
-          <span class="sub-card-tag">Vue.js</span>
-          <span class="sub-card-tag">Spring Boot</span>
-          <span class="sub-card-tag">MySQL</span>
+        <div class="activity-card-title">성결대학교 컴퓨터공학과</div>
+        <div class="activity-card-desc">자료구조, 알고리즘, 데이터베이스, 운영체제 등 전공 과목을 바탕으로 개발 기본기를 쌓았습니다. 전공 지식을 프로젝트 설계와 구현에 연결하는 데 집중했습니다.</div>
+        <div class="activity-card-tags">
+          <span class="activity-card-tag">Computer Science</span>
+          <span class="activity-card-tag">Database</span>
+          <span class="activity-card-tag">OS</span>
         </div>
       </div>
 
-      <div class="sub-card reveal reveal-d3">
-        <div class="sub-card-header">
-          <div class="sub-folder-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-          </div>
-          <div class="sub-card-links">
-            <a href="https://github.com/1jshun" class="sub-card-link" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
+      <div class="activity-card reveal reveal-d3">
+        <div class="activity-card-header">
+          <span class="activity-type">Study</span>
+          <span class="activity-period">8 months</span>
         </div>
-        <div class="sub-card-title">JSH Portfolio</div>
-        <div class="sub-card-desc">퍼스널 브랜딩을 위한 개발자 포트폴리오 사이트. 순수 HTML/CSS/JS로 제작.</div>
-        <div class="sub-card-tags">
-          <span class="sub-card-tag">HTML</span>
-          <span class="sub-card-tag">CSS</span>
-          <span class="sub-card-tag">JavaScript</span>
-        </div>
-      </div>
-
-      <div class="sub-card reveal reveal-d4">
-        <div class="sub-card-header">
-          <div class="sub-folder-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-          </div>
-          <div class="sub-card-links">
-            <a href="https://github.com/1jshun" class="sub-card-link" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="sub-card-title">빌리는 소통인도부터</div>
-        <div class="sub-card-desc">외국인 유학생을 위한 한국 생활 정보 공유 커뮤니티 플랫폼. 다국어 지원 적용.</div>
-        <div class="sub-card-tags">
-          <span class="sub-card-tag">Next.js</span>
-          <span class="sub-card-tag">TypeScript</span>
-          <span class="sub-card-tag">PostgreSQL</span>
-        </div>
-      </div>
-
-      <div class="sub-card reveal reveal-d5">
-        <div class="sub-card-header">
-          <div class="sub-folder-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 19a2 2 0 01-2 2H4a2 2 0 01-2-2V5a2 2 0 012-2h5l2 3h9a2 2 0 012 2z"/></svg>
-          </div>
-          <div class="sub-card-links">
-            <a href="https://github.com/1jshun" class="sub-card-link" target="_blank" rel="noopener" aria-label="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="sub-card-title">알고리즘 스터디</div>
-        <div class="sub-card-desc">알고리즘 문제 풀이 및 리뷰 공유 스터디. 8개월간 리더 역할 수행.</div>
-        <div class="sub-card-tags">
-          <span class="sub-card-tag">Java</span>
-          <span class="sub-card-tag">Python</span>
+        <div class="activity-card-title">알고리즘 스터디 리더</div>
+        <div class="activity-card-desc">정기 문제 풀이와 리뷰 공유를 운영하며 스터디 리더 역할을 수행했습니다. 풀이 접근 방식을 설명하고 개선점을 나누며 문제 해결력을 함께 높였습니다.</div>
+        <div class="activity-card-tags">
+          <span class="activity-card-tag">Algorithm</span>
+          <span class="activity-card-tag">Java</span>
+          <span class="activity-card-tag">Code Review</span>
         </div>
       </div>
 
@@ -1229,12 +1072,12 @@
 </section>
 
 <!-- ── CONTACT ──────────────────────────────────────────── -->
-<section id="contact" style="text-align:center;border-top:1px solid var(--border-light);">
+<section id="contact">
   <div class="page-wrap">
     <p class="contact-label reveal">06. Contact</p>
-    <h2 class="contact-heading reveal reveal-d1">함께 멋진 서비스를<br/>만들어보고 싶습니다.</h2>
+    <h2 class="contact-heading reveal reveal-d1">함께 멋진 서비스를<br>만들어보고 싶습니다.</h2>
     <p class="contact-sub reveal reveal-d2">
-      새로운 기회나 프로젝트 제안이 있으시면 편하게 연락주세요.<br/>
+      새로운 기회나 프로젝트 제안이 있으시면 편하게 연락주세요.<br>
       최대한 빠르게 답변 드리겠습니다.
     </p>
     <a href="mailto:myjsh6543@gmail.com" class="contact-btn reveal reveal-d3">
@@ -1247,9 +1090,9 @@
 
 <!-- ── FOOTER ───────────────────────────────────────────── -->
 <footer>
-  <div class="page-wrap" style="display:flex;justify-content:space-between;align-items:center;width:100%;">
+  <div class="page-wrap footer-inner">
     <span class="footer-name">전성훈 © 2026</span>
-    <span class="footer-right">Designed & Built by 전성훈</span>
+    <span class="footer-right">Designed &amp; Built by 전성훈</span>
   </div>
 </footer>
 
