@@ -341,94 +341,108 @@
     .main-projects-list {
       display: flex;
       flex-direction: column;
-      gap: 60px;
+      gap: 28px;
     }
-    .proj-item {
-      position: relative;
-    }
-    .proj-layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0;
-      align-items: center;
-    }
-    .proj-layout.reverse .proj-img-wrap { order: 2; }
-    .proj-layout.reverse .proj-info-box { order: 1; }
-    .proj-img-wrap {
-      position: relative;
-      border-radius: var(--radius-md);
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-    }
-    .proj-img-wrap img {
-      width: 100%;
-      aspect-ratio: 16/10;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.5s ease;
-    }
-    .proj-item:hover .proj-img-wrap img { transform: scale(1.04); }
-    .proj-img-overlay {
-      position: absolute; inset: 0;
-      background: rgba(17,17,17,0.22);
-      transition: opacity 0.3s;
-    }
-    .proj-item:hover .proj-img-overlay { opacity: 0.4; }
-    .proj-info-box {
+    .project-entry {
       background: var(--surface);
-      border-radius: var(--radius-md);
-      padding: 32px 28px;
-      box-shadow: var(--shadow-md);
-      margin: 0 -32px;
-      position: relative;
-      z-index: 2;
       border: 1px solid var(--border-light);
+      border-radius: var(--radius-sm);
+      padding: 32px;
+      box-shadow: var(--shadow-sm);
     }
-    .proj-layout.reverse .proj-info-box {
-      margin-left: -32px;
-      margin-right: 0;
+    .project-topline {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      padding-bottom: 18px;
+      margin-bottom: 22px;
+      border-bottom: 1px solid var(--border-light);
     }
-    .proj-meta {
+    .project-kicker {
       font-family: var(--mono);
       font-size: 10.5px;
       color: var(--text-muted);
-      letter-spacing: 0.05em;
-      margin-bottom: 8px;
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
     }
-    .proj-title {
-      font-size: 20px;
+    .project-role {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+    .project-period {
+      font-family: var(--mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      white-space: nowrap;
+    }
+    .project-title-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+    .project-title {
+      font-size: 22px;
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.03em;
       margin-bottom: 6px;
     }
-    .proj-period {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      margin-bottom: 12px;
-      font-family: var(--mono);
+    .project-subtitle {
+      font-size: 13.5px;
+      line-height: 1.7;
+      color: var(--text-secondary);
     }
-    .proj-desc {
+    .project-section {
+      margin-top: 22px;
+    }
+    .project-section-title {
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.02em;
+      margin-bottom: 14px;
+    }
+    .project-section p {
       font-size: 13px;
       line-height: 1.85;
       color: var(--text-secondary);
-      margin-bottom: 16px;
     }
-    .proj-tags {
-      display: flex; flex-wrap: wrap; gap: 6px;
-      margin-bottom: 20px;
+    .project-bullets {
+      list-style: disc;
+      padding-left: 22px;
     }
-    .proj-tag {
+    .project-bullets li {
+      font-size: 13px;
+      line-height: 1.9;
+      color: var(--text-secondary);
+    }
+    .project-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .project-stack-row {
+      display: grid;
+      grid-template-columns: 92px 1fr;
+      gap: 14px;
+      font-size: 12.5px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+    .project-stack-label {
       font-family: var(--mono);
       font-size: 10.5px;
-      background: var(--tag-bg);
-      color: var(--text-secondary);
-      border-radius: 4px;
-      padding: 3px 8px;
-      font-weight: 500;
+      font-weight: 600;
+      color: var(--text-muted);
+      letter-spacing: 0.04em;
     }
     .proj-links {
-      display: flex; gap: 10px;
+      display: flex; gap: 10px; flex-wrap: wrap;
+      flex-shrink: 0;
     }
     .proj-link-btn {
       display: flex; align-items: center; gap: 6px;
@@ -611,16 +625,8 @@
       .skills-cats { border-right: none; border-bottom: 1px solid var(--border); padding-right: 0; padding-bottom: 16px; margin-bottom: 28px; flex-direction: row; flex-wrap: wrap; }
       .skills-panel { padding-left: 0; }
 
-      .proj-layout, .proj-layout.reverse {
-        grid-template-columns: 1fr;
-        gap: 16px;
-      }
-      .proj-layout .proj-img-wrap { order: 1; }
-      .proj-layout .proj-info-box { order: 2; }
-      .proj-layout.reverse .proj-img-wrap { order: 1; }
-      .proj-layout.reverse .proj-info-box { order: 2; }
-      .proj-info-box, .proj-layout.reverse .proj-info-box {
-        margin: 0;
+      .project-title-row {
+        flex-direction: column;
       }
 
       .activities-grid { grid-template-columns: repeat(2, 1fr); }
@@ -636,6 +642,10 @@
       .skills-grid { grid-template-columns: 1fr; }
       .activities-grid { grid-template-columns: 1fr; }
       .main-projects-list { gap: 40px; }
+      .project-entry { padding: 24px 20px; }
+      .project-topline { flex-direction: column; gap: 10px; }
+      .project-period { white-space: normal; }
+      .project-stack-row { grid-template-columns: 1fr; gap: 2px; }
     }
 
     @media (max-width: 420px) {
@@ -664,10 +674,10 @@
     <p class="sec-label reveal">01. About Me</p>
     <div class="about-layout">
       <div class="about-text reveal reveal-d1">
-        <h2>보이는 기능 뒤의 흐름을<br>고민하는 개발자입니다.</h2>
+        <h2>보이는 기능 뒤의 흐름을 추적하고<br>개선하는 개발자입니다.</h2>
         <p>
-          백엔드 개발은 화면에 보이는 기능이 빠르고 안정적으로 동작하도록, 보이지 않는 구조를 설계하는 일이라고 생각합니다.<br><br>
-          Spring Boot와 JPA를 기반으로 REST API와 비즈니스 로직을 구현하며, 요청이 처리되고 데이터가 전달되는 과정을 꾸준히 다뤄왔습니다. 단순히 기능을 동작시키는 데서 끝나지 않고, 더 빠르고 안정적인 흐름으로 개선하는 백엔드 개발자가 되고자 합니다.
+          백엔드 개발은 화면에 보이는 기능이 빠르고 안정적으로 동작하도록, 보이지 않는 요청과 데이터의 흐름을 설계하는 일이라고 생각합니다.<br><br>
+          Spring Boot와 JPA를 기반으로 REST API와 비즈니스 로직을 구현하며, 사용자의 요청이 서비스 로직과 데이터베이스를 거쳐 응답으로 이어지는 과정을 다뤄왔습니다. 기능을 동작시키는 데서 그치지 않고, 데이터 조회 방식과 예외 처리, 쿼리 흐름처럼 성능과 안정성에 영향을 주는 부분을 살피며 더 예측 가능한 흐름으로 개선하는 백엔드 개발자가 되고자 합니다.
         </p>
         <div class="about-contact">
           <a href="mailto:myjsh6543@gmail.com" class="about-contact-item">
@@ -922,98 +932,135 @@
     <div class="main-projects-list">
 
       <!-- Project 1: DnDn -->
-      <div class="proj-item reveal">
-        <div class="proj-layout">
-          <div class="proj-img-wrap">
-            <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&h=438&fit=crop" alt="DnDn">
-            <div class="proj-img-overlay"></div>
+      <article class="project-entry reveal">
+        <div class="project-topline">
+          <div>
+            <div class="project-kicker">Project Team</div>
+            <div class="project-role">Backend Developer</div>
           </div>
-          <div class="proj-info-box">
-            <div class="proj-meta">Main Project #01</div>
-            <div class="proj-title">DnDn</div>
-            <div class="proj-period">2025.12 — 2026.02</div>
-            <p class="proj-desc">
-              건설 현장의 공정 계획과 작업 진행 상황을 체계적으로 관리하고, 일정 변경과 현장 데이터를 반영할 수 있도록 설계한 건설 관리 서비스입니다. Next.js와 TypeScript 기반으로 실시간 공정 현황 대시보드와 작업자 알림 시스템을 구현했습니다.
-            </p>
-            <div class="proj-tags">
-              <span class="proj-tag">Next.js</span>
-              <span class="proj-tag">TypeScript</span>
-              <span class="proj-tag">React</span>
-              <span class="proj-tag">Spring Boot</span>
-              <span class="proj-tag">MySQL</span>
-              <span class="proj-tag">Docker</span>
+          <div class="project-period">2025.12 — 2026.02</div>
+        </div>
+
+        <div class="project-title-row">
+          <div>
+            <h3 class="project-title">DnDn</h3>
+            <p class="project-subtitle">건설 현장 운영 데이터를 연결하는 통합 관리 플랫폼</p>
+          </div>
+          <div class="proj-links">
+            <a href="https://github.com/beyond-sw-camp/be24-fin-Intelli_J-DnDn-BE" target="_blank" rel="noopener" class="proj-link-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              BE GitHub
+            </a>
+            <a href="https://github.com/beyond-sw-camp/be24-fin-Intelli_J-DnDn-FE" target="_blank" rel="noopener" class="proj-link-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              FE GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">Description</div>
+          <p>
+            DnDn은 건설 현장에서 발생하는 인력, 근태, 안전, 공정, 문서, 환경 데이터를 하나로 연결해 관리하는 통합 플랫폼입니다. 현장 소장과 관리자가 근로자 현황, 게이트 혼잡도, 공정 진행률, 일일 보고, ESG 지표를 한 화면에서 확인하고 데이터 기반으로 의사결정할 수 있도록 설계했습니다.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">Contribute</div>
+          <ul class="project-bullets">
+            <li>Spring Boot + JPA 기반 핵심 도메인 API 설계 및 구현</li>
+            <li>JWT + Spring Security 기반 Stateless 인증·인가 구조 설계</li>
+            <li>Kafka 기반 비동기 처리 구조를 적용하여 API 요청 흐름과 후속 처리 로직 분리</li>
+            <li>Elasticsearch 기반 검색 기능 구현으로 복잡한 조건 조회 로직을 단순화하고 검색 흐름 개선</li>
+            <li>검색 엔진 장애 상황을 고려한 RDB fallback 처리로 검색 기능의 안정성 보완</li>
+            <li>Jenkins + Kaniko 기반 이미지 빌드 및 배포 자동화 구성</li>
+            <li>Kubernetes Blue-Green 배포 구조를 적용하여 배포 중 서비스 중단 위험 감소</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">Tech Stack</div>
+          <div class="project-stack">
+            <div class="project-stack-row">
+              <span class="project-stack-label">Backend</span>
+              <span>Java 17, Spring Boot, Spring Security, Spring Cloud Gateway, JPA, MariaDB, Elasticsearch, Kafka, JWT</span>
             </div>
-            <div class="proj-links">
-              <a href="https://app.notion.com/p/DnDn-d3b2131b05dd839bab75015d9a6744d9?source=copy_link" target="_blank" rel="noopener" class="proj-link-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                자세히 보기
-              </a>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Infra</span>
+              <span>Docker, Kubernetes, Jenkins, Kaniko, Nginx Ingress, Prometheus, Grafana, AWS S3</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Collab</span>
+              <span>GitHub, Postman, Figma, Notion, Discord</span>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
       <!-- Project 2: POTICARD -->
-      <div class="proj-item reveal">
-        <div class="proj-layout reverse">
-          <div class="proj-img-wrap">
-            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=700&h=438&fit=crop" alt="POTICARD">
-            <div class="proj-img-overlay"></div>
+      <article class="project-entry reveal">
+        <div class="project-topline">
+          <div>
+            <div class="project-kicker">Project Team</div>
+            <div class="project-role">Backend Developer</div>
           </div>
-          <div class="proj-info-box">
-            <div class="proj-meta">Main Project #02</div>
-            <div class="proj-title">POTICARD</div>
-            <div class="proj-period">2025.09 — 2025.11</div>
-            <p class="proj-desc">
-              개발자의 프로젝트 경험과 핵심 역량을 정리하고, 디지털 명함 형태로 관리할 수 있도록 설계한 커리어 관리 서비스입니다. Spring Boot와 JPA 기반으로 사용자 이력 관리 API를 설계하고, Elasticsearch를 활용한 빠른 검색 기능을 구현했습니다.
-            </p>
-            <div class="proj-tags">
-              <span class="proj-tag">React</span>
-              <span class="proj-tag">TypeScript</span>
-              <span class="proj-tag">Spring Boot</span>
-              <span class="proj-tag">Elasticsearch</span>
-              <span class="proj-tag">Kubernetes</span>
-            </div>
-            <div class="proj-links">
-              <a href="#" class="proj-link-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                자세히 보기
-              </a>
-            </div>
-          </div>
+          <div class="project-period">2025.09 — 2025.11</div>
         </div>
-      </div>
 
-      <!-- Project 3: Routie -->
-      <div class="proj-item reveal">
-        <div class="proj-layout">
-          <div class="proj-img-wrap">
-            <img src="https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=700&h=438&fit=crop" alt="Routie">
-            <div class="proj-img-overlay"></div>
+        <div class="project-title-row">
+          <div>
+            <h3 class="project-title">POTICARD</h3>
+            <p class="project-subtitle">개발자의 경험과 역량을 카드 형태로 관리하는 커리어 서비스</p>
           </div>
-          <div class="proj-info-box">
-            <div class="proj-meta">Main Project #03</div>
-            <div class="proj-title">Routie</div>
-            <div class="proj-period">2025.06 — 2025.08</div>
-            <p class="proj-desc">
-              Android와 Wear OS를 연동하여 운동 수행 데이터를 기록하고, 루틴 관리와 보상 시스템을 제공하는 헬스케어 서비스입니다. Spring Boot 기반 REST API와 MySQL을 활용해 운동 이력 및 통계 데이터를 효율적으로 관리했습니다.
-            </p>
-            <div class="proj-tags">
-              <span class="proj-tag">Java</span>
-              <span class="proj-tag">Spring Boot</span>
-              <span class="proj-tag">MySQL</span>
-              <span class="proj-tag">Docker</span>
-              <span class="proj-tag">REST API</span>
+          <div class="proj-links">
+            <a href="https://github.com/beyond-sw-camp/be24-3rd-DevOops-Poticard" target="_blank" rel="noopener" class="proj-link-btn">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+              GitHub
+            </a>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">Description</div>
+          <p>
+            POTICARD는 개발자의 프로젝트 경험과 기술 역량을 디지털 카드 형태로 정리하고 공유할 수 있도록 설계한 커리어 관리 서비스입니다. 프로필, 프로젝트, 기술 스택 정보를 구조화해 관리하고, 필요한 정보를 빠르게 탐색할 수 있는 흐름을 제공하는 데 집중했습니다.
+          </p>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">Contribute</div>
+          <ul class="project-bullets">
+            <li>Spring Boot + JPA 기반 사용자, 프로젝트, 카드 관리 API 설계 및 구현</li>
+            <li>JWT + Spring Security 기반 인증 구조를 적용하여 사용자별 리소스 접근 제어</li>
+            <li>프로필과 프로젝트 정보를 분리한 도메인 구조로 데이터 관리 흐름 단순화</li>
+            <li>Elasticsearch 기반 검색 기능 구현으로 키워드 기반 탐색 흐름 개선</li>
+            <li>API 응답 DTO와 예외 응답 구조를 정리하여 프론트엔드 연동 시 처리 로직 감소</li>
+            <li>Docker + Kubernetes 기반 배포 환경 구성으로 실행 환경 차이에 따른 배포 이슈 감소</li>
+          </ul>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">Tech Stack</div>
+          <div class="project-stack">
+            <div class="project-stack-row">
+              <span class="project-stack-label">Backend</span>
+              <span>Java 17, Spring Boot, Spring Data JPA, Spring Security, JWT, MariaDB, Elasticsearch</span>
             </div>
-            <div class="proj-links">
-              <a href="#" class="proj-link-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                자세히 보기
-              </a>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Frontend</span>
+              <span>React, TypeScript</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Infra</span>
+              <span>Docker, Kubernetes</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Collab</span>
+              <span>GitHub, Notion, Figma</span>
             </div>
           </div>
         </div>
-      </div>
+      </article>
 
     </div>
   </div>
