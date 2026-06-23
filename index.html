@@ -38,6 +38,10 @@
       min-height: 100vh;
       overflow-x: hidden;
     }
+    main {
+      display: flex;
+      flex-direction: column;
+    }
 
     /* ── HEADER ───────────────────────────── */
     header {
@@ -122,6 +126,11 @@
       padding: 60px 0;
       border-top: 1px solid var(--border-light);
     }
+    #about { order: 1; }
+    #projects { order: 2; }
+    #skills { order: 3; }
+    #experience { order: 4; }
+    #activities { order: 5; }
     #about {
       padding-top: 96px;
     }
@@ -251,17 +260,10 @@
     }
     /* ── SKILLS ───────────────────────────── */
     .skills-layout {
-      display: grid;
-      grid-template-columns: 160px 1fr;
-      gap: 0;
-      min-height: 320px;
+      display: block;
     }
     .skills-cats {
-      border-right: 1px solid var(--border);
-      padding-right: 28px;
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
+      display: none;
     }
     .skill-cat-btn {
       background: none;
@@ -284,24 +286,40 @@
       box-shadow: var(--shadow-sm);
     }
     .skills-panel {
-      padding-left: 40px;
+      padding-left: 0;
+      border-top: 1px solid var(--border);
     }
     .skill-panel-content {
-      display: none;
-      animation: fadeIn 0.25s ease;
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 18px;
+      align-items: start;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border-light);
     }
-    .skill-panel-content.active { display: block; }
+    .skill-panel-content.active { display: grid; }
+    .skill-panel-content::before {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--text-primary);
+      letter-spacing: -0.01em;
+      padding-top: 7px;
+    }
+    .skill-panel-content[data-panel="backend"]::before { content: 'Backend'; }
+    .skill-panel-content[data-panel="frontend"]::before { content: 'Frontend'; }
+    .skill-panel-content[data-panel="infra"]::before { content: 'Infra / DB'; }
+    .skill-panel-content[data-panel="tool"]::before { content: 'Tools'; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
     .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 16px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
     }
     .skill-entry {
-      display: flex;
-      align-items: flex-start;
-      gap: 14px;
-      padding: 14px 16px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 11px;
       background: var(--surface);
       border-radius: var(--radius-sm);
       border: 1px solid var(--border-light);
@@ -310,11 +328,10 @@
     .skill-entry:hover {
       border-color: var(--border);
       box-shadow: var(--shadow-sm);
-      transform: translateY(-1px);
     }
     .skill-icon {
-      width: 36px; height: 36px;
-      border-radius: 8px;
+      width: 24px; height: 24px;
+      border-radius: 6px;
       background: var(--tag-bg);
       display: flex; align-items: center; justify-content: center;
       flex-shrink: 0;
@@ -324,17 +341,14 @@
       color: var(--text-primary);
       overflow: hidden;
     }
-    .skill-icon img { width: 22px; height: 22px; object-fit: contain; }
+    .skill-icon img { width: 16px; height: 16px; object-fit: contain; }
     .skill-name-text {
       font-size: 13px;
       font-weight: 600;
       color: var(--text-primary);
-      margin-bottom: 2px;
     }
     .skill-desc-text {
-      font-size: 11.5px;
-      color: var(--text-muted);
-      line-height: 1.5;
+      display: none;
     }
 
     /* ── MAIN PROJECTS ────────────────────── */
@@ -420,6 +434,23 @@
       line-height: 1.9;
       color: var(--text-secondary);
     }
+    .project-ordered-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      padding-left: 22px;
+    }
+    .project-ordered-list li {
+      font-size: 13px;
+      line-height: 1.85;
+      color: var(--text-secondary);
+    }
+    .project-ordered-list strong {
+      display: block;
+      color: var(--text-primary);
+      font-size: 13.5px;
+      margin-bottom: 2px;
+    }
     .project-stack {
       display: flex;
       flex-direction: column;
@@ -464,58 +495,59 @@
 
     /* ── ACTIVITIES ───────────────────────── */
     .activities-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-    }
-    .activity-card {
-      background: var(--surface);
-      border: 1px solid var(--border-light);
-      border-radius: var(--radius-md);
-      padding: 24px 22px 20px;
-      transition: all 0.25s;
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: 0;
+      border-top: 1px solid var(--border);
+    }
+    .activity-card {
+      display: grid;
+      grid-template-columns: 150px 1fr;
+      gap: 8px 28px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border-light);
+      transition: border-color 0.2s;
     }
     .activity-card:hover {
       border-color: var(--border);
-      box-shadow: var(--shadow-md);
-      transform: translateY(-4px);
     }
     .activity-card-header {
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 8px;
+      grid-row: 1 / span 3;
     }
     .activity-type {
-      font-family: var(--mono);
-      font-size: 10.5px;
+      font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
       font-weight: 600;
       color: var(--text-secondary);
-      background: var(--tag-bg);
+      border: 1px solid var(--border);
       border-radius: 4px;
       padding: 4px 8px;
+      letter-spacing: 0;
     }
     .activity-period {
-      font-family: var(--mono);
-      font-size: 10.5px;
+      font-family: 'Noto Sans KR', system-ui, -apple-system, sans-serif;
+      font-size: 12px;
       color: var(--text-muted);
+      letter-spacing: 0;
     }
     .activity-card-title {
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 700;
       color: var(--text-primary);
       letter-spacing: -0.02em;
     }
     .activity-card-desc {
-      font-size: 12.5px;
+      font-size: 13px;
       line-height: 1.7;
       color: var(--text-secondary);
-      flex: 1;
     }
     .activity-card-tags {
-      display: flex; flex-wrap: wrap; gap: 5px;
+      display: none;
     }
     .activity-card-tag {
       font-family: var(--mono);
@@ -525,53 +557,6 @@
       border-radius: 3px;
       padding: 2px 7px;
     }
-
-    /* ── CONTACT ──────────────────────────── */
-    #contact {
-      padding: 72px 0;
-      text-align: center;
-    }
-    .contact-label {
-      font-family: var(--mono);
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: 0.06em;
-      margin-bottom: 24px;
-    }
-    .contact-heading {
-      font-size: clamp(24px, 4vw, 38px);
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      color: var(--text-primary);
-      margin-bottom: 16px;
-      line-height: 1.3;
-    }
-    .contact-sub {
-      font-size: 14.5px;
-      color: var(--text-secondary);
-      margin-bottom: 40px;
-      line-height: 1.7;
-    }
-    .contact-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--accent);
-      color: #fff;
-      text-decoration: none;
-      font-size: 14px;
-      font-weight: 600;
-      padding: 14px 32px;
-      border-radius: 8px;
-      letter-spacing: -0.01em;
-      transition: all 0.25s;
-      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
-    }
-    .contact-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(0,0,0,0.22);
-    }
-    .contact-btn svg { width: 15px; height: 15px; }
 
     /* ── FOOTER ───────────────────────────── */
     footer {
@@ -629,7 +614,6 @@
         flex-direction: column;
       }
 
-      .activities-grid { grid-template-columns: repeat(2, 1fr); }
     }
 
     @media (max-width: 600px) {
@@ -639,8 +623,24 @@
       .page-wrap { padding: 0 20px; }
       section { padding: 52px 0; }
       #about { padding-top: 84px; }
-      .skills-grid { grid-template-columns: 1fr; }
-      .activities-grid { grid-template-columns: 1fr; }
+      .skill-panel-content {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        padding: 14px 0;
+      }
+      .skill-panel-content::before {
+        padding-top: 0;
+      }
+      .activity-card {
+        grid-template-columns: 1fr;
+        gap: 8px;
+      }
+      .activity-card-header {
+        grid-row: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+      }
       .main-projects-list { gap: 40px; }
       .project-entry { padding: 24px 20px; }
       .project-topline { flex-direction: column; gap: 10px; }
@@ -660,10 +660,10 @@
   <a class="logo" href="#about">J</a>
   <nav>
     <a href="#about">About</a>
-    <a href="#experience">Experience</a>
-    <a href="#skills">Skills</a>
     <a href="#projects">Projects</a>
-    <a href="#contact">Contact</a>
+    <a href="#skills">Skills</a>
+    <a href="#experience">Experience</a>
+    <a href="#activities">Activities</a>
   </nav>
 </header>
 
@@ -709,23 +709,21 @@
 <!-- ── EXPERIENCE ───────────────────────────────────────── -->
 <section id="experience">
   <div class="page-wrap">
-    <p class="sec-label reveal">02. Experience</p>
+    <p class="sec-label reveal">04. Experience</p>
     <div class="exp-list">
 
       <div class="exp-item reveal reveal-d1">
         <span class="exp-dot"></span>
         <div class="exp-period">2025.12.09 — 2026.06.08</div>
         <div class="exp-org">한화시스템 BEYOND SW CAMP</div>
-        <div class="exp-role">백엔드 개발자 양성과정<br>
-        Spring Boot와 JPA를 활용해 요청 처리, 데이터 흐름, 인증 구조를 직접 구현하며 백엔드 서비스의 구조를 익혔습니다.</div>
+        <div class="exp-role">백엔드 개발자 양성과정 우수 수료생</div>
       </div>
 
       <div class="exp-item reveal reveal-d2">
         <span class="exp-dot"></span>
-        <div class="exp-period">2024.02 — 2026.02</div>
+        <div class="exp-period">2024.03 — 2026.02</div>
         <div class="exp-org">성결대학교</div>
-        <div class="exp-role">컴퓨터공학과 학사<br>
-        자료구조, 알고리즘, 데이터베이스, 운영체제 등 전공 과목을 이수하며 개발의 기본기를 쌓았습니다.</div>
+        <div class="exp-role">컴퓨터공학과 학사 졸업</div>
       </div>
 
       <div class="exp-item reveal reveal-d3">
@@ -928,7 +926,7 @@
 <!-- ── MAIN PROJECTS ────────────────────────────────────── -->
 <section id="projects">
   <div class="page-wrap">
-    <p class="sec-label reveal">04. Main Projects</p>
+    <p class="sec-label reveal">02. Main Projects</p>
     <div class="main-projects-list">
 
       <!-- Project 1: DnDn -->
@@ -936,9 +934,9 @@
         <div class="project-topline">
           <div>
             <div class="project-kicker">Project Team</div>
-            <div class="project-role">Backend Developer</div>
+            <div class="project-role">Backend Developer · Team Lead</div>
           </div>
-          <div class="project-period">2025.12 — 2026.02</div>
+          <div class="project-period">2026.04.10 — 2026.06.08</div>
         </div>
 
         <div class="project-title-row">
@@ -959,31 +957,69 @@
         </div>
 
         <div class="project-section">
-          <div class="project-section-title">Description</div>
+          <div class="project-section-title">프로젝트 정보</div>
+          <div class="project-stack">
+            <div class="project-stack-row">
+              <span class="project-stack-label">Period</span>
+              <span>2026.04.10 — 2026.06.08</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Team</span>
+              <span>5명 / 팀장</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Role</span>
+              <span>일정 관리 API 설계 및 구현, MSA 분리, 검색 기능 개선, 배포 환경 구성</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">서비스 개요</div>
           <p>
-            DnDn은 건설 현장에서 발생하는 인력, 근태, 안전, 공정, 문서, 환경 데이터를 하나로 연결해 관리하는 통합 플랫폼입니다. 현장 소장과 관리자가 근로자 현황, 게이트 혼잡도, 공정 진행률, 일일 보고, ESG 지표를 한 화면에서 확인하고 데이터 기반으로 의사결정할 수 있도록 설계했습니다.
+            DnDn은 건설 현장에서 분산되어 관리되던 공정 일정, 인력, 현장 문서 데이터를 하나의 흐름으로 연결해 관리하는 건설 공정 관리 플랫폼입니다. 공정 계획부터 작업 지시, 일일 보고, 공정 분석까지 이어지는 현장 관리 프로세스를 시스템화하여 일정 관리, 인력 배치, 문서 관리 업무를 통합적으로 수행할 수 있도록 지원합니다.
           </p>
         </div>
 
         <div class="project-section">
-          <div class="project-section-title">Contribute</div>
+          <div class="project-section-title">핵심 구현 내용</div>
+          <ol class="project-ordered-list">
+            <li>
+              <strong>일정 관리 API 설계 및 구현</strong>
+              공정 계획, 작업 지시, 일일 보고 등 현장 일정 데이터를 생성·관리하는 API를 설계하고 구현했습니다. 작성된 일정 데이터는 Kafka를 통해 문서 관리 서비스로 전달되어 현장 문서 데이터로 적재되도록 구현했습니다.
+            </li>
+            <li>
+              <strong>문서 관리 기능 MSA 분리</strong>
+              문서 관리 기능을 별도 MSA 서비스로 분리하고, Gateway와 Kafka 기반 비동기 메시징을 통해 서비스 간 결합도를 낮췄습니다. 이를 통해 문서 처리와 검색 인덱싱 흐름을 독립적으로 확장할 수 있는 구조를 갖췄습니다.
+            </li>
+            <li>
+              <strong>검색 기능 고도화</strong>
+              Logstash 기반 인덱싱 파이프라인을 구성해 문서 본문과 메타데이터를 Elasticsearch에 적재하고, 문서명 중심이던 기존 검색을 본문·공종·작성일의 복합 조건 기반 검색으로 확장하여 문서 검색 정확도와 성능을 개선했습니다.
+            </li>
+            <li>
+              <strong>Kubernetes 환경에서 서비스 라우팅 및 배포 구조 구성</strong>
+              Kubernetes 환경에서 Frontend, Backend, Gateway, MSA 서비스를 분리 배포하고, Ingress 기반 라우팅과 Blue-Green 배포 구조를 구성했습니다. 이를 통해 기존 백엔드 API와 문서 관리 MSA API의 배포 단위를 분리하고, 신규 버전 배포 시 트래픽 전환과 롤백이 가능한 안정적인 배포 구조를 마련했습니다.
+            </li>
+          </ol>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">성과</div>
           <ul class="project-bullets">
-            <li>Spring Boot + JPA 기반 핵심 도메인 API 설계 및 구현</li>
-            <li>JWT + Spring Security 기반 Stateless 인증·인가 구조 설계</li>
-            <li>Kafka 기반 비동기 처리 구조를 적용하여 API 요청 흐름과 후속 처리 로직 분리</li>
-            <li>Elasticsearch 기반 검색 기능 구현으로 복잡한 조건 조회 로직을 단순화하고 검색 흐름 개선</li>
-            <li>검색 엔진 장애 상황을 고려한 RDB fallback 처리로 검색 기능의 안정성 보완</li>
-            <li>Jenkins + Kaniko 기반 이미지 빌드 및 배포 자동화 구성</li>
-            <li>Kubernetes Blue-Green 배포 구조를 적용하여 배포 중 서비스 중단 위험 감소</li>
+            <li>문서 검색 평균 TPS 6.1 → 219.5, 약 36배 향상</li>
+            <li>문서 검색 평균 응답 시간 9,318ms → 129.98ms, 약 98.6% 단축</li>
+            <li>오류 건수 590건 → 0건</li>
+            <li>MSA 분리를 통해 문서 관리 기능의 독립성과 유지보수성 개선</li>
+            <li>파일명 중심 검색에서 본문·공종·작성일 기반 복합 조건 검색으로 확장</li>
           </ul>
         </div>
 
         <div class="project-section">
-          <div class="project-section-title">Tech Stack</div>
+          <div class="project-section-title">기술 스택</div>
           <div class="project-stack">
             <div class="project-stack-row">
               <span class="project-stack-label">Backend</span>
-              <span>Java 17, Spring Boot, Spring Security, Spring Cloud Gateway, JPA, MariaDB, Elasticsearch, Kafka, JWT</span>
+              <span>Java 17, Spring Boot, Spring Security, Spring Cloud Gateway, JPA, MariaDB, Kafka, Elasticsearch, Logstash, JWT</span>
             </div>
             <div class="project-stack-row">
               <span class="project-stack-label">Infra</span>
@@ -1002,15 +1038,15 @@
         <div class="project-topline">
           <div>
             <div class="project-kicker">Project Team</div>
-            <div class="project-role">Backend Developer</div>
+            <div class="project-role">Backend Developer · Team Lead</div>
           </div>
-          <div class="project-period">2025.09 — 2025.11</div>
+          <div class="project-period">2026.01.12 — 2026.03.31</div>
         </div>
 
         <div class="project-title-row">
           <div>
             <h3 class="project-title">POTICARD</h3>
-            <p class="project-subtitle">개발자의 경험과 역량을 카드 형태로 관리하는 커리어 서비스</p>
+            <p class="project-subtitle">개발자의 경험과 역량을 디지털 명함과 포트폴리오로 관리하는 커리어 플랫폼</p>
           </div>
           <div class="proj-links">
             <a href="https://github.com/beyond-sw-camp/be24-3rd-DevOops-Poticard" target="_blank" rel="noopener" class="proj-link-btn">
@@ -1021,42 +1057,77 @@
         </div>
 
         <div class="project-section">
-          <div class="project-section-title">Description</div>
+          <div class="project-section-title">프로젝트 정보</div>
+          <div class="project-stack">
+            <div class="project-stack-row">
+              <span class="project-stack-label">Period</span>
+              <span>2026.01.12 — 2026.03.31</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Team</span>
+              <span>4명 / 팀장</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">Role</span>
+              <span>포트폴리오 관리 API 설계 및 구현, AI 첨삭 및 기술 스택 추출 기능 구현, 결제 검증 및 요금제 구독 관리 기능 구현</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">서비스 개요</div>
           <p>
-            POTICARD는 개발자의 프로젝트 경험과 기술 역량을 디지털 카드 형태로 정리하고 공유할 수 있도록 설계한 커리어 관리 서비스입니다. 프로필, 프로젝트, 기술 스택 정보를 구조화해 관리하고, 필요한 정보를 빠르게 탐색할 수 있는 흐름을 제공하는 데 집중했습니다.
+            POTICARD는 사용자의 경력과 프로젝트 경험을 포트폴리오와 디지털 명함 형태로 정리하고 공유할 수 있도록 지원하는 커리어 관리 플랫폼입니다. 사용자는 자신의 경험을 포트폴리오로 작성하고, AI 기반 첨삭과 기술 스택 추출 기능을 통해 핵심 역량을 더 명확하게 정리할 수 있습니다. 또한 요금제 구독을 통해 AI 첨삭 등 고급 기능을 사용할 수 있도록 결제 및 권한 관리 흐름을 함께 제공합니다.
           </p>
         </div>
 
         <div class="project-section">
-          <div class="project-section-title">Contribute</div>
+          <div class="project-section-title">핵심 구현 내용</div>
+          <ol class="project-ordered-list">
+            <li>
+              <strong>포트폴리오 API 설계 및 구현</strong>
+              포트폴리오를 섹션 단위로 관리하는 API 구조를 설계하고, 목록 조회에 페이징을 적용해 응답 데이터 크기를 관리했습니다.
+            </li>
+            <li>
+              <strong>이미지 업로드 구조 개선</strong>
+              서비스 내 이미지 업로드 기능을 S3 기반으로 통합했습니다. 서버에 파일을 직접 저장하지 않고 S3 URL을 데이터로 관리하여 애플리케이션 서버의 파일 I/O 부담을 줄이고, 배포 환경이 변경되어도 이미지 접근 경로가 유지되도록 설계했습니다.
+            </li>
+            <li>
+              <strong>결제 위변조 검증 로직 구현</strong>
+              클라이언트에서 결제 완료 후 전달한 결제 정보를 서버에서 PortOne API로 재조회하도록 구현했습니다. 결제 상태와 실제 결제 금액을 검증하고, 요청 금액과 PG사 결제 금액이 일치하지 않을 경우 예외를 발생시켜 결제 위변조 가능성을 차단했습니다.
+            </li>
+            <li>
+              <strong>요금제 기반 기능 접근 제어 로직 구현</strong>
+              사용자의 최근 결제 내역을 기준으로 PRO 요금제 활성화 여부를 판단하는 로직을 구현했습니다. 이를 바탕으로 AI 첨삭과 같은 유료 기능 접근을 제어하여 구독 상태에 따라 기능 사용 가능 여부가 달라지도록 구성했습니다.
+            </li>
+          </ol>
+        </div>
+
+        <div class="project-section">
+          <div class="project-section-title">성과</div>
           <ul class="project-bullets">
-            <li>Spring Boot + JPA 기반 사용자, 프로젝트, 카드 관리 API 설계 및 구현</li>
-            <li>JWT + Spring Security 기반 인증 구조를 적용하여 사용자별 리소스 접근 제어</li>
-            <li>프로필과 프로젝트 정보를 분리한 도메인 구조로 데이터 관리 흐름 단순화</li>
-            <li>Elasticsearch 기반 검색 기능 구현으로 키워드 기반 탐색 흐름 개선</li>
-            <li>API 응답 DTO와 예외 응답 구조를 정리하여 프론트엔드 연동 시 처리 로직 감소</li>
-            <li>Docker + Kubernetes 기반 배포 환경 구성으로 실행 환경 차이에 따른 배포 이슈 감소</li>
+            <li>포트폴리오 목록 조회에 페이징 전략 도입으로 MTT 29.7ms → 19.5ms 단축, TPS 65.5 → 100.9, 51.7% 향상</li>
           </ul>
         </div>
 
         <div class="project-section">
-          <div class="project-section-title">Tech Stack</div>
+          <div class="project-section-title">기술 스택</div>
           <div class="project-stack">
             <div class="project-stack-row">
               <span class="project-stack-label">Backend</span>
-              <span>Java 17, Spring Boot, Spring Data JPA, Spring Security, JWT, MariaDB, Elasticsearch</span>
+              <span>Java, Spring Boot, Spring Data JPA, Spring Security, JWT, MariaDB</span>
+            </div>
+            <div class="project-stack-row">
+              <span class="project-stack-label">External API</span>
+              <span>Gemini API, PortOne API, AWS S3</span>
             </div>
             <div class="project-stack-row">
               <span class="project-stack-label">Frontend</span>
-              <span>React, TypeScript</span>
+              <span>Vue.js, JavaScript</span>
             </div>
             <div class="project-stack-row">
-              <span class="project-stack-label">Infra</span>
-              <span>Docker, Kubernetes</span>
-            </div>
-            <div class="project-stack-row">
-              <span class="project-stack-label">Collab</span>
-              <span>GitHub, Notion, Figma</span>
+              <span class="project-stack-label">Infra / Tools</span>
+              <span>Nginx, Prometheus, Grafana, Jaeger, Swagger, Postman, GitHub</span>
             </div>
           </div>
         </div>
@@ -1074,43 +1145,41 @@
 
       <div class="activity-card reveal reveal-d1">
         <div class="activity-card-header">
-          <span class="activity-type">External</span>
-          <span class="activity-period">2025.12 — 2026.06</span>
+          <span class="activity-type">해커톤</span>
+          <span class="activity-period">2025.12.20</span>
         </div>
-        <div class="activity-card-title">한화시스템 BEYOND SW CAMP</div>
-        <div class="activity-card-desc">실무형 교육 과정에서 웹 서비스 개발 흐름과 팀 프로젝트를 경험했습니다. 요구사항 분석부터 구현, 협업, 배포까지 서비스 완성도를 기준으로 학습했습니다.</div>
+        <div class="activity-card-title">사이오닉AI X 인스트럭트 한국 해커톤</div>
+        <div class="activity-card-desc">금리, 부동산 PF, 외국인 자금 흐름 등 금융 리스크 지표를 시각화한 대시보드 제작</div>
         <div class="activity-card-tags">
-          <span class="activity-card-tag">Bootcamp</span>
-          <span class="activity-card-tag">Team Project</span>
-          <span class="activity-card-tag">Backend</span>
+          <span class="activity-card-tag">Hackathon</span>
+          <span class="activity-card-tag">Dashboard</span>
+          <span class="activity-card-tag">Finance</span>
         </div>
       </div>
 
       <div class="activity-card reveal reveal-d2">
         <div class="activity-card-header">
-          <span class="activity-type">Campus</span>
-          <span class="activity-period">2024.02 — 2026.02</span>
+          <span class="activity-type">스터디</span>
+          <span class="activity-period">2025.12 — 2026.04</span>
         </div>
-        <div class="activity-card-title">성결대학교 컴퓨터공학과</div>
-        <div class="activity-card-desc">자료구조, 알고리즘, 데이터베이스, 운영체제 등 전공 과목을 바탕으로 개발 기본기를 쌓았습니다. 전공 지식을 프로젝트 설계와 구현에 연결하는 데 집중했습니다.</div>
+        <div class="activity-card-title">스팸 스터디 운영 (스터디장)</div>
+        <div class="activity-card-desc">부트캠프 학습 내용을 복습하고 알고리즘 문제 풀이를 진행하는 스터디 운영</div>
         <div class="activity-card-tags">
-          <span class="activity-card-tag">Computer Science</span>
-          <span class="activity-card-tag">Database</span>
-          <span class="activity-card-tag">OS</span>
+          <span class="activity-card-tag">Study Lead</span>
+          <span class="activity-card-tag">Algorithm</span>
+          <span class="activity-card-tag">Review</span>
         </div>
       </div>
 
       <div class="activity-card reveal reveal-d3">
         <div class="activity-card-header">
-          <span class="activity-type">Study</span>
-          <span class="activity-period">8 months</span>
+          <span class="activity-type">자격증</span>
         </div>
-        <div class="activity-card-title">알고리즘 스터디 리더</div>
-        <div class="activity-card-desc">정기 문제 풀이와 리뷰 공유를 운영하며 스터디 리더 역할을 수행했습니다. 풀이 접근 방식을 설명하고 개선점을 나누며 문제 해결력을 함께 높였습니다.</div>
+        <div class="activity-card-title">정보처리기사</div>
+        <div class="activity-card-desc">정보처리기사 필기 합격</div>
         <div class="activity-card-tags">
-          <span class="activity-card-tag">Algorithm</span>
-          <span class="activity-card-tag">Java</span>
-          <span class="activity-card-tag">Code Review</span>
+          <span class="activity-card-tag">Certificate</span>
+          <span class="activity-card-tag">CS</span>
         </div>
       </div>
 
@@ -1118,21 +1187,6 @@
   </div>
 </section>
 
-<!-- ── CONTACT ──────────────────────────────────────────── -->
-<section id="contact">
-  <div class="page-wrap">
-    <p class="contact-label reveal">06. Contact</p>
-    <h2 class="contact-heading reveal reveal-d1">함께 멋진 서비스를<br>만들어보고 싶습니다.</h2>
-    <p class="contact-sub reveal reveal-d2">
-      새로운 기회나 프로젝트 제안이 있으시면 편하게 연락주세요.<br>
-      최대한 빠르게 답변 드리겠습니다.
-    </p>
-    <a href="mailto:myjsh6543@gmail.com" class="contact-btn reveal reveal-d3">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12a2 2 0 01-2 2H4a2 2 0 01-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      Send Mail
-    </a>
-  </div>
-</section>
 </main>
 
 <!-- ── FOOTER ───────────────────────────────────────────── -->
